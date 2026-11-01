@@ -39,19 +39,17 @@ Memory Guard 完全在你的 Mac 上运行，离线时也能正常守护。内�
 
 ## 下载与安装
 
-**26.11.1 (6) · Apple Silicon · macOS 13 及以上**。下载版采用本机签名，尚未公证，因此首次打开时可能需要你手动允许。
+26.11.1 (6) · Apple Silicon · macOS 13 及以上。下载版采用本机签名，尚未公证，因此首次打开时可能需要你手动允许。
 
 1. [直接下载 Memory Guard](https://github.com/sd800/memory-guard/releases/download/v26.11.1/MemoryGuard-26.11.1-6.zip)（ZIP，5.46 MB）。
-2. 在访达中打开「下载」，双击 ZIP，解压得到 **Memory Guard.app**。如果浏览器已经自动解压，使用解压后的应用即可。
-3. 将 **Memory Guard.app** 拖入访达侧边栏的「应用程序」。
-4. 从「应用程序」打开 **Memory Guard**。如果 macOS 提示无法验证开发者或无法检查应用，点按「完成」或「好」关闭提示，保留应用。如果正常打开，直接继续第 7 步。
-5. 打开「苹果菜单 → 系统设置 → 隐私与安全性」，向下滚动至「安全性」，找到 **Memory Guard** 对应的拦截提示，点按「仍要打开（Open Anyway）」。
+2. 在访达中打开「下载」，双击 ZIP，解压得到 Memory Guard.app。如果浏览器已经自动解压，使用解压后的应用即可。
+3. 将 Memory Guard.app 拖入访达侧边栏的「应用程序」。
+4. 从「应用程序」打开 Memory Guard。如果 macOS 提示无法验证开发者或无法检查应用，点按「完成」或「好」关闭提示，保留应用。如果正常打开，直接继续第 7 步。
+5. 打开「苹果菜单 → 系统设置 → 隐私与安全性」，向下滚动至「安全性」，找到 Memory Guard 对应的拦截提示，点按「仍要打开（Open Anyway）」。
 6. 如系统要求，使用触控 ID 或 Mac 登录密码完成验证，再在确认对话框中点按「打开（Open）」。
 7. 在 Memory Guard 的「阈值」页查看推荐值。如果需要接收保护提醒，在系统询问时允许通知。
 
 如果没有看到「仍要打开」，先再次尝试打开已安装的应用，再返回「隐私与安全性」。更新已有安装前，请先在 Memory Guard 中选择「完全退出」，再替换应用。
-
-[SHA-256 校验值](https://github.com/sd800/memory-guard/releases/download/v26.11.1/SHA256SUMS.txt) · [Apple 的首次打开说明](https://support.apple.com/zh-cn/102445)
 
 ## 构建与运行
 
