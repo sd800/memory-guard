@@ -15,6 +15,10 @@
   font-size: 100%;
   background: var(--page);
   color: var(--ink);
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { scroll-behavior: auto; }
 }
 @media (prefers-color-scheme: dark) {
   :root {
