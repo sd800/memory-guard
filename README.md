@@ -37,6 +37,10 @@ Memory Guard works entirely on your Mac, including when you’re offline. Memory
 
 Memory Guard reads process identity and memory counters. Your conversations, source code and document contents stay outside its monitoring scope. Recent samples stay in RAM. If you export diagnostics, the app saves a local report to the location you choose. The app never uploads it.
 
+## Download
+
+Get the [latest release](https://github.com/sd800/memory-guard/releases/latest) for Apple Silicon and macOS 13+. Unzip it, move **Memory Guard.app** to your Applications folder, then open it. The downloadable build is ad-hoc signed and not notarized; macOS may require approval in **System Settings → Privacy & Security**. Release assets include SHA-256 checksums.
+
 ## Build and run
 
 Use a Mac with Xcode and the macOS SDK installed. The project uses Swift, AppKit and SwiftUI and has no external package dependencies.
@@ -46,7 +50,7 @@ git clone https://github.com/sd800/memory-guard.git
 cd memory-guard
 bash scripts/build.sh release
 mkdir -p "$HOME/Applications"
-ditto --norsrc --noextattr "build/Memory Guard.app" "$HOME/Applications/Memory Guard.app"
+ditto --norsrc --noextattr "build/Products.noindex/Memory Guard.app" "$HOME/Applications/Memory Guard.app"
 open "$HOME/Applications/Memory Guard.app"
 ```
 

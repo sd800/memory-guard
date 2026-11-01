@@ -11,10 +11,14 @@
 ```sh
 bash scripts/test.sh
 bash scripts/build.sh release
-open "build/Memory Guard.app"
+mkdir -p "$HOME/Applications"
+ditto --norsrc --noextattr "build/Products.noindex/Memory Guard.app" "$HOME/Applications/Memory Guard.app"
+open "$HOME/Applications/Memory Guard.app"
 ```
 
-The build script uses Xcode from `/Applications/Xcode.app` by default. Override `DEVELOPER_DIR` if necessary. Builds use two workers to bound compiler resource consumption. The output is locally ad-hoc signed, with separately signed helper executables. Set `SIGN_IDENTITY` to a valid identity to use certificate signing instead. Public distribution and notarization are outside this personal release.
+The build script uses Xcode from `/Applications/Xcode.app` by default. Override `DEVELOPER_DIR` if necessary. Builds use two workers to bound compiler resource consumption. The output is locally ad-hoc signed, with separately signed helper executables. Set `SIGN_IDENTITY` to a valid identity to use certificate signing instead. Notarization is outside this personal release.
+
+The generated app stays in `build/Products.noindex/` to keep build copies out of Spotlight searches. Release ZIP archives remain in `build/`.
 
 For a permanent installation, copy the finished bundle to `~/Applications/Memory Guard.app` **before launching it**. Keep it at that location while the guard is running. Current-session launchd jobs retain absolute helper paths. For an update or move, choose **Quit Completely** in Settings or the application menu, replace the bundle and reopen it. If Memory Guard owns a paused process, resolve it in Overview first. The two helper jobs stop together with the interface and are registered again the next time you open the app.
 

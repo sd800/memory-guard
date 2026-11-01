@@ -11,6 +11,7 @@ bin_dir="$(xcrun swift build --disable-sandbox -c "$configuration" --show-bin-pa
 staging_dir="$(mktemp -d /private/tmp/MemoryGuard-build.XXXXXX)"
 trap 'rm -rf "$staging_dir"' EXIT
 app_dir="$staging_dir/Memory Guard.app"
+output_app="$PWD/build/Products.noindex/Memory Guard.app"
 mkdir -p "$app_dir/Contents/MacOS" "$app_dir/Contents/Helpers" "$app_dir/Contents/Resources" "$app_dir/Contents/Library/LaunchAgents"
 cp "$bin_dir/MemoryGuard" "$app_dir/Contents/MacOS/MemoryGuard"
 cp "$bin_dir/GuardAgent" "$app_dir/Contents/Helpers/GuardAgent"
@@ -30,18 +31,19 @@ codesign --force --sign "$identity" --options runtime --identifier local.memoryg
 codesign --force --sign "$identity" --options runtime --identifier local.memoryguard.recovery "$app_dir/Contents/Helpers/GuardRecovery"
 codesign --force --sign "$identity" --options runtime "$app_dir"
 codesign --verify --deep --strict "$app_dir"
-mkdir -p build
+mkdir -p "$PWD/build/Products.noindex"
 # This is the generated bundle only; a fresh copy avoids stale sealed resources after icon renames.
-rm -rf -- "$PWD/build/Memory Guard.app"
-ditto --norsrc --noextattr "$app_dir" "$PWD/build/Memory Guard.app"
-xattr -dr com.apple.FinderInfo "$PWD/build/Memory Guard.app" 2>/dev/null || true
-xattr -dr com.apple.ResourceFork "$PWD/build/Memory Guard.app" 2>/dev/null || true
+# Remove the old indexed output as well when upgrading an existing checkout.
+rm -rf -- "$output_app" "$PWD/build/Memory Guard.app"
+ditto --norsrc --noextattr "$app_dir" "$output_app"
+xattr -dr com.apple.FinderInfo "$output_app" 2>/dev/null || true
+xattr -dr com.apple.ResourceFork "$output_app" 2>/dev/null || true
 # File Provider can asynchronously reattach FinderInfo on a synced Documents folder.
 # Verify the payload here; strict checks also run on the original and unpacked release.
-codesign --verify --deep "$PWD/build/Memory Guard.app"
+codesign --verify --deep "$output_app"
 version="$(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' Config/Info.plist)"
 build_number="$(/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' Config/Info.plist)"
 ditto -c -k --norsrc --keepParent "$app_dir" "$PWD/build/MemoryGuard-$version-$build_number.zip"
 ditto -x -k "$PWD/build/MemoryGuard-$version-$build_number.zip" "$staging_dir/zip-check"
 codesign --verify --deep --strict "$staging_dir/zip-check/Memory Guard.app"
-echo "$PWD/build/Memory Guard.app"
+echo "$output_app"

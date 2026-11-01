@@ -37,6 +37,10 @@ Memory Guard 完全在你的 Mac 上运行，离线时也能正常守护。内�
 
 守护程序读取的是进程身份和内存计数，不读取对话、源代码或文档内容。近期采样保存在内存中。只有当你主动导出诊断时，应用才会将报告保存到你选择的位置，不会上传报告。
 
+## 下载
+
+在 [GitHub Releases](https://github.com/sd800/memory-guard/releases/latest) 下载适用于 Apple Silicon、macOS 13 及以上的版本。解压后，将 **Memory Guard.app** 移到应用程序文件夹再打开。下载版采用本机签名，尚未公证；macOS 可能需要你在「系统设置 → 隐私与安全性」中允许打开。发布附件同时提供 SHA-256 校验值。
+
 ## 构建与运行
 
 在安装了 Xcode 和 macOS SDK 的 Mac 上执行以下命令。项目使用 Swift、AppKit 和 SwiftUI，无第三方包依赖。
@@ -46,7 +50,7 @@ git clone https://github.com/sd800/memory-guard.git
 cd memory-guard
 bash scripts/build.sh release
 mkdir -p "$HOME/Applications"
-ditto --norsrc --noextattr "build/Memory Guard.app" "$HOME/Applications/Memory Guard.app"
+ditto --norsrc --noextattr "build/Products.noindex/Memory Guard.app" "$HOME/Applications/Memory Guard.app"
 open "$HOME/Applications/Memory Guard.app"
 ```
 

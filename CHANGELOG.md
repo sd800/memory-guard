@@ -7,6 +7,8 @@ Versions follow `YY.M.NUM`; build numbers are monotonically increasing integers.
 - Quit Completely stops the interface and both background services for the current session. It is available in Settings and directly below Quit Interface in the application menu, without a shortcut. Outstanding pauses must be resolved first.
 - New installations keep the menu bar item hidden and show the system memory percentage by default when it is enabled. Existing choices are preserved.
 - Publish the source under MIT with English and Simplified Chinese guides.
+- Provide an Apple Silicon release ZIP and SHA-256 checksums.
+- Keep generated app bundles in `build/Products.noindex/` so build copies do not appear alongside the installed app in Spotlight.
 
 ## 26.11.1 (5) — 2026-11-01
 
