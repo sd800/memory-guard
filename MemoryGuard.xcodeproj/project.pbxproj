@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+		BC4A71180870F7945155FBB0 = {
+			isa = "XCLocalSwiftPackageReference";
+			relativePath = ".";
+		};
+		878A52FC5FF6A57D50B7B870 = {
+			isa = "PBXGroup";
+			children = (B468A3121E6ACB5D0A9E5AAC, 9BFA75EE14A47688DBA28195, D539DBF6FCAA7C4D7775CB04);
+			name = "Sources";
+			sourceTree = "<group>";
+		};
+		DC8A354C1A4622AFB24835D9 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "Sources/GuardAgent/main.swift";
+			sourceTree = "<group>";
+		};
+		0AC498FD18A372FBC4F02067 = {
+			isa = "PBXBuildFile";
+			fileRef = DC8A354C1A4622AFB24835D9;
+		};
+		B468A3121E6ACB5D0A9E5AAC = {
+			isa = "PBXGroup";
+			name = "GuardAgent";
+			children = (DC8A354C1A4622AFB24835D9);
+			sourceTree = "<group>";
+		};
+		A4C4C916DD85A13A82F12A87 = {
+			isa = "PBXSourcesBuildPhase";
+			buildActionMask = 2147483647;
+			files = (0AC498FD18A372FBC4F02067);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		986B85070EF0F0E97560DA6A = {
+			isa = "XCSwiftPackageProductDependency";
+			productName = "MemoryGuardKit";
+			package = BC4A71180870F7945155FBB0;
+		};
+		64C3139004330D9F8B98DCA6 = {
+			isa = "PBXBuildFile";
+			productRef = 986B85070EF0F0E97560DA6A;
+		};
+		9A94FE5F61D7284F7E913BE4 = {
+			isa = "PBXFrameworksBuildPhase";
+			buildActionMask = 2147483647;
+			files = (64C3139004330D9F8B98DCA6);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD7DCDC72E3049351807206D = {
+			isa = "PBXFileReference";
+			explicitFileType = "compiled.mach-o.executable";
+			includeInIndex = 0;
+			path = "GuardAgent";
+			sourceTree = "BUILT_PRODUCTS_DIR";
+		};
+		788D71F7B865022862761D53 = {
+			isa = "XCBuildConfiguration";
+			name = "Debug";
+			buildSettings = {
+				SWIFT_VERSION = "5.0";
+				MACOSX_DEPLOYMENT_TARGET = "13.0";
+				SDKROOT = "macosx";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = "Manual";
+				ENABLE_HARDENED_RUNTIME = "YES";
+				ENABLE_APP_SANDBOX = "NO";
+				PRODUCT_NAME = "GuardAgent";
+				PRODUCT_BUNDLE_IDENTIFIER = "local.memoryguard.agent";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG";
+				GENERATE_INFOPLIST_FILE = "NO";
+				ENABLE_USER_SCRIPT_SANDBOXING = "NO";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+				CURRENT_PROJECT_VERSION = "6";
+				MARKETING_VERSION = "26.11.1";
+				COMBINE_HIDPI_IMAGES = "YES";
+			};
+		};
+		7D276B2591919F6790204A42 = {
+			isa = "XCBuildConfiguration";
+			name = "Release";
+			buildSettings = {
+				SWIFT_VERSION = "5.0";
+				MACOSX_DEPLOYMENT_TARGET = "13.0";
+				SDKROOT = "macosx";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = "Manual";
+				ENABLE_HARDENED_RUNTIME = "YES";
+				ENABLE_APP_SANDBOX = "NO";
+				PRODUCT_NAME = "GuardAgent";
+				PRODUCT_BUNDLE_IDENTIFIER = "local.memoryguard.agent";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				GENERATE_INFOPLIST_FILE = "NO";
+				ENABLE_USER_SCRIPT_SANDBOXING = "NO";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+				CURRENT_PROJECT_VERSION = "6";
+				MARKETING_VERSION = "26.11.1";
+				COMBINE_HIDPI_IMAGES = "YES";
+			};
+		};
+		F5666AE62006DB099601CFD6 = {
+			isa = "XCConfigurationList";
+			buildConfigurations = (788D71F7B865022862761D53, 7D276B2591919F6790204A42);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+		19F0412FED7FB65FECE00DBC = {
+			isa = "PBXNativeTarget";
+			buildConfigurationList = F5666AE62006DB099601CFD6;
+			buildPhases = (A4C4C916DD85A13A82F12A87, 9A94FE5F61D7284F7E913BE4);
+			buildRules = ();
+			dependencies = ();
+			name = "GuardAgent";
+			productName = "GuardAgent";
+			productReference = DD7DCDC72E3049351807206D;
+			productType = "com.apple.product-type.tool";
+			packageProductDependencies = (986B85070EF0F0E97560DA6A);
+		};
+		82E612E31723FA1CB342EC50 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "Sources/GuardRecovery/main.swift";
+			sourceTree = "<group>";
+		};
+		7FB22E6E2D7CDF58ED8C832D = {
+			isa = "PBXBuildFile";
+			fileRef = 82E612E31723FA1CB342EC50;
+		};
+		9BFA75EE14A47688DBA28195 = {
+			isa = "PBXGroup";
+			name = "GuardRecovery";
+			children = (82E612E31723FA1CB342EC50);
+			sourceTree = "<group>";
+		};
+		9491F71C6CCB96B68DAE2168 = {
+			isa = "PBXSourcesBuildPhase";
+			buildActionMask = 2147483647;
+			files = (7FB22E6E2D7CDF58ED8C832D);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BCE3866C33472008851D34F = {
+			isa = "XCSwiftPackageProductDependency";
+			productName = "MemoryGuardKit";
+			package = BC4A71180870F7945155FBB0;
+		};
+		B6BE1DFF864F86495F168141 = {
+			isa = "PBXBuildFile";
+			productRef = 2BCE3866C33472008851D34F;
+		};
+		A3C3ED15F56C498579FFFF59 = {
+			isa = "PBXFrameworksBuildPhase";
+			buildActionMask = 2147483647;
+			files = (B6BE1DFF864F86495F168141);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8292535A442DA9C2EF6C6F5C = {
+			isa = "PBXFileReference";
+			explicitFileType = "compiled.mach-o.executable";
+			includeInIndex = 0;
+			path = "GuardRecovery";
+			sourceTree = "BUILT_PRODUCTS_DIR";
+		};
+		2F07A10C7FF45067A527CAD4 = {
+			isa = "XCBuildConfiguration";
+			name = "Debug";
+			buildSettings = {
+				SWIFT_VERSION = "5.0";
+				MACOSX_DEPLOYMENT_TARGET = "13.0";
+				SDKROOT = "macosx";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = "Manual";
+				ENABLE_HARDENED_RUNTIME = "YES";
+				ENABLE_APP_SANDBOX = "NO";
+				PRODUCT_NAME = "GuardRecovery";
+				PRODUCT_BUNDLE_IDENTIFIER = "local.memoryguard.recovery";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG";
+				GENERATE_INFOPLIST_FILE = "NO";
+				ENABLE_USER_SCRIPT_SANDBOXING = "NO";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+				CURRENT_PROJECT_VERSION = "6";
+				MARKETING_VERSION = "26.11.1";
+				COMBINE_HIDPI_IMAGES = "YES";
+			};
+		};
+		21FD922D60AFB7DDEBB27510 = {
+			isa = "XCBuildConfiguration";
+			name = "Release";
+			buildSettings = {
+				SWIFT_VERSION = "5.0";
+				MACOSX_DEPLOYMENT_TARGET = "13.0";
+				SDKROOT = "macosx";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = "Manual";
+				ENABLE_HARDENED_RUNTIME = "YES";
+				ENABLE_APP_SANDBOX = "NO";
+				PRODUCT_NAME = "GuardRecovery";
+				PRODUCT_BUNDLE_IDENTIFIER = "local.memoryguard.recovery";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				GENERATE_INFOPLIST_FILE = "NO";
+				ENABLE_USER_SCRIPT_SANDBOXING = "NO";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+				CURRENT_PROJECT_VERSION = "6";
+				MARKETING_VERSION = "26.11.1";
+				COMBINE_HIDPI_IMAGES = "YES";
+			};
+		};
+		4D0CA31054883990671481B9 = {
+			isa = "XCConfigurationList";
+			buildConfigurations = (2F07A10C7FF45067A527CAD4, 21FD922D60AFB7DDEBB27510);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+		CEB54E7C88211EAE030AFD9C = {
+			isa = "PBXNativeTarget";
+			buildConfigurationList = 4D0CA31054883990671481B9;
+			buildPhases = (9491F71C6CCB96B68DAE2168, A3C3ED15F56C498579FFFF59);
+			buildRules = ();
+			dependencies = ();
+			name = "GuardRecovery";
+			productName = "GuardRecovery";
+			productReference = 8292535A442DA9C2EF6C6F5C;
+			productType = "com.apple.product-type.tool";
+			packageProductDependencies = (2BCE3866C33472008851D34F);
+		};
+		B737C9E30C777809D61D4E88 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "Sources/MemoryGuard/AppModel.swift";
+			sourceTree = "<group>";
+		};
+		370A6F1D4D8DCF30BF2EF4D0 = {
+			isa = "PBXBuildFile";
+			fileRef = B737C9E30C777809D61D4E88;
+		};
+		ADF6F25B7CD894A3FDFE0EF0 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "Sources/MemoryGuard/Localization.swift";
+			sourceTree = "<group>";
+		};
+		86DA65A19A3B6242A05F0D88 = {
+			isa = "PBXBuildFile";
+			fileRef = ADF6F25B7CD894A3FDFE0EF0;
+		};
+		06EA144681F818EFE3802293 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "Sources/MemoryGuard/Views.swift";
+			sourceTree = "<group>";
+		};
+		91B2B3B2958DCA860506E7DD = {
+			isa = "PBXBuildFile";
+			fileRef = 06EA144681F818EFE3802293;
+		};
+		0D744BA383CD4B62DA094A30 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "Sources/MemoryGuard/main.swift";
+			sourceTree = "<group>";
+		};
+		465E315CB4F4315DE80DF92A = {
+			isa = "PBXBuildFile";
+			fileRef = 0D744BA383CD4B62DA094A30;
+		};
+		D539DBF6FCAA7C4D7775CB04 = {
+			isa = "PBXGroup";
+			name = "MemoryGuard";
+			children = (B737C9E30C777809D61D4E88, ADF6F25B7CD894A3FDFE0EF0, 06EA144681F818EFE3802293, 0D744BA383CD4B62DA094A30);
+			sourceTree = "<group>";
+		};
+		3DEC3260A1ED98834CB8DD6F = {
+			isa = "PBXSourcesBuildPhase";
+			buildActionMask = 2147483647;
+			files = (370A6F1D4D8DCF30BF2EF4D0, 86DA65A19A3B6242A05F0D88, 91B2B3B2958DCA860506E7DD, 465E315CB4F4315DE80DF92A);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E132487E6E3B8E7BAD3F71C = {
+			isa = "XCSwiftPackageProductDependency";
+			productName = "MemoryGuardKit";
+			package = BC4A71180870F7945155FBB0;
+		};
+		B600C0B825679034D6CD4D1E = {
+			isa = "PBXBuildFile";
+			productRef = 2E132487E6E3B8E7BAD3F71C;
+		};
+		9CC7ACC5D6CA06C36DE581A3 = {
+			isa = "PBXFrameworksBuildPhase";
+			buildActionMask = 2147483647;
+			files = (B600C0B825679034D6CD4D1E);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FF62CA60AA459C558015098 = {
+			isa = "PBXFileReference";
+			explicitFileType = "wrapper.application";
+			includeInIndex = 0;
+			path = "Memory Guard.app";
+			sourceTree = "BUILT_PRODUCTS_DIR";
+		};
+		72EDA6518C2ECDD7F555DC82 = {
+			isa = "XCBuildConfiguration";
+			name = "Debug";
+			buildSettings = {
+				SWIFT_VERSION = "5.0";
+				MACOSX_DEPLOYMENT_TARGET = "13.0";
+				SDKROOT = "macosx";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = "Manual";
+				ENABLE_HARDENED_RUNTIME = "YES";
+				ENABLE_APP_SANDBOX = "NO";
+				PRODUCT_NAME = "Memory Guard";
+				PRODUCT_BUNDLE_IDENTIFIER = "local.memoryguard.app";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG";
+				GENERATE_INFOPLIST_FILE = "NO";
+				ENABLE_USER_SCRIPT_SANDBOXING = "NO";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+				CURRENT_PROJECT_VERSION = "6";
+				MARKETING_VERSION = "26.11.1";
+				COMBINE_HIDPI_IMAGES = "YES";
+				INFOPLIST_FILE = "Config/Info.plist";
+				EXECUTABLE_NAME = "MemoryGuard";
+				PRODUCT_MODULE_NAME = "MemoryGuard";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "MemoryGuardIcon";
+			};
+		};
+		CDDE031CBC1E3A78C3551B50 = {
+			isa = "XCBuildConfiguration";
+			name = "Release";
+			buildSettings = {
+				SWIFT_VERSION = "5.0";
+				MACOSX_DEPLOYMENT_TARGET = "13.0";
+				SDKROOT = "macosx";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = "Manual";
+				ENABLE_HARDENED_RUNTIME = "YES";
+				ENABLE_APP_SANDBOX = "NO";
+				PRODUCT_NAME = "Memory Guard";
+				PRODUCT_BUNDLE_IDENTIFIER = "local.memoryguard.app";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				GENERATE_INFOPLIST_FILE = "NO";
+				ENABLE_USER_SCRIPT_SANDBOXING = "NO";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+				CURRENT_PROJECT_VERSION = "6";
+				MARKETING_VERSION = "26.11.1";
+				COMBINE_HIDPI_IMAGES = "YES";
+				INFOPLIST_FILE = "Config/Info.plist";
+				EXECUTABLE_NAME = "MemoryGuard";
+				PRODUCT_MODULE_NAME = "MemoryGuard";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "MemoryGuardIcon";
+			};
+		};
+		01AAD0E93022512DD7A7FF5B = {
+			isa = "XCConfigurationList";
+			buildConfigurations = (72EDA6518C2ECDD7F555DC82, CDDE031CBC1E3A78C3551B50);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+		8BF729FFE074CAEE622C0292 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "folder.assetcatalog";
+			path = "Resources/Assets.xcassets";
+			sourceTree = "<group>";
+		};
+		F2687002D4A70A82C8684105 = {
+			isa = "PBXBuildFile";
+			fileRef = 8BF729FFE074CAEE622C0292;
+		};
+		41D311A605520FC7B8B9A980 = {
+			isa = "PBXResourcesBuildPhase";
+			buildActionMask = 2147483647;
+			files = (F2687002D4A70A82C8684105);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55F6ADFF8136F5A576243FB6 = {
+			isa = "PBXContainerItemProxy";
+			containerPortal = 244210E48437B6556980A702;
+			proxyType = 1;
+			remoteGlobalIDString = 19F0412FED7FB65FECE00DBC;
+			remoteInfo = "GuardAgent";
+		};
+		716E14A4817AD876687C9015 = {
+			isa = "PBXTargetDependency";
+			target = 19F0412FED7FB65FECE00DBC;
+			targetProxy = 55F6ADFF8136F5A576243FB6;
+		};
+		75BDE22F817DEF1F209015A2 = {
+			isa = "PBXContainerItemProxy";
+			containerPortal = 244210E48437B6556980A702;
+			proxyType = 1;
+			remoteGlobalIDString = CEB54E7C88211EAE030AFD9C;
+			remoteInfo = "GuardRecovery";
+		};
+		0EFD9ADC0C52E82A0B33D11E = {
+			isa = "PBXTargetDependency";
+			target = CEB54E7C88211EAE030AFD9C;
+			targetProxy = 75BDE22F817DEF1F209015A2;
+		};
+		8A1EED22144C3F04485A69EE = {
+			isa = "PBXShellScriptBuildPhase";
+			buildActionMask = 2147483647;
+			files = ();
+			inputPaths = ("$(BUILT_PRODUCTS_DIR)/GuardAgent", "$(BUILT_PRODUCTS_DIR)/GuardRecovery", "$(SRCROOT)/Resources/AppIcon.png");
+			outputPaths = ("$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Helpers/GuardAgent", "$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Helpers/GuardRecovery", "$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Resources/MemoryGuardArtwork.png");
+			name = "Embed guard services";
+			shellPath = "/bin/bash";
+			shellScript = "set -eu\napp=\"$TARGET_BUILD_DIR/$CONTENTS_FOLDER_PATH\"\nmkdir -p \"$app/Helpers\" \"$app/Library/LaunchAgents\" \"$app/Resources\"\nfor name in GuardAgent GuardRecovery; do\n  cp \"$BUILT_PRODUCTS_DIR/$name\" \"$app/Helpers/$name\"\ndone\ncp \"$SRCROOT\"/Config/local.memoryguard.*.plist \"$app/Library/LaunchAgents/\"\ncp \"$SRCROOT/Resources/AppIcon.png\" \"$app/Resources/MemoryGuardArtwork.png\"\n";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		714D597302C7CB2D7F1D8A43 = {
+			isa = "PBXNativeTarget";
+			buildConfigurationList = 01AAD0E93022512DD7A7FF5B;
+			buildPhases = (3DEC3260A1ED98834CB8DD6F, 9CC7ACC5D6CA06C36DE581A3, 41D311A605520FC7B8B9A980, 8A1EED22144C3F04485A69EE);
+			buildRules = ();
+			dependencies = (716E14A4817AD876687C9015, 0EFD9ADC0C52E82A0B33D11E);
+			name = "MemoryGuard";
+			productName = "MemoryGuard";
+			productReference = 8FF62CA60AA459C558015098;
+			productType = "com.apple.product-type.application";
+			packageProductDependencies = (2E132487E6E3B8E7BAD3F71C);
+		};
+		0A3E27B8CA818264D75C8D81 = {
+			isa = "PBXGroup";
+			children = (DD7DCDC72E3049351807206D, 8292535A442DA9C2EF6C6F5C, 8FF62CA60AA459C558015098);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		F913940C58E8744A2AF1C68B = {
+			isa = "PBXFileReference";
+			path = "Package.swift";
+			sourceTree = "<group>";
+		};
+		06572A96A58DC510037D5EFA = {
+			isa = "PBXFileReference";
+			path = "CHANGELOG.md";
+			sourceTree = "<group>";
+		};
+		6AE27F664CD0832AD1AAA396 = {
+			isa = "PBXFileReference";
+			path = "Config/Info.plist";
+			sourceTree = "<group>";
+		};
+		2741B30B0C8EB2DC300ABD99 = {
+			isa = "PBXFileReference";
+			path = "Config/Version.xcconfig";
+			sourceTree = "<group>";
+		};
+		00CBCE1A205CDD2818C079F5 = {
+			isa = "PBXFileReference";
+			path = "docs/BUILD.md";
+			sourceTree = "<group>";
+		};
+		FF21B6B9A3A33E9D9056AC96 = {
+			isa = "PBXFileReference";
+			path = "docs/ARCHITECTURE.md";
+			sourceTree = "<group>";
+		};
+		81CF95D5C07B3B7671CD9C7F = {
+			isa = "PBXFileReference";
+			path = "docs/VALIDATION.md";
+			sourceTree = "<group>";
+		};
+		0D6E4079E36703EBD37C0072 = {
+			isa = "PBXGroup";
+			children = (878A52FC5FF6A57D50B7B870, 8BF729FFE074CAEE622C0292, 0A3E27B8CA818264D75C8D81, F913940C58E8744A2AF1C68B, 06572A96A58DC510037D5EFA, 6AE27F664CD0832AD1AAA396, 2741B30B0C8EB2DC300ABD99, 00CBCE1A205CDD2818C079F5, FF21B6B9A3A33E9D9056AC96, 81CF95D5C07B3B7671CD9C7F);
+			sourceTree = "<group>";
+		};
+		73EBF6644258C120893E685D = {
+			isa = "XCBuildConfiguration";
+			name = "Debug";
+			buildSettings = {
+				CLANG_ENABLE_MODULES = "YES";
+				MACOSX_DEPLOYMENT_TARGET = "13.0";
+				SWIFT_VERSION = "5.0";
+				SDKROOT = "macosx";
+			};
+		};
+		0B0C687DF8B6B8DC790B519C = {
+			isa = "XCBuildConfiguration";
+			name = "Release";
+			buildSettings = {
+				CLANG_ENABLE_MODULES = "YES";
+				MACOSX_DEPLOYMENT_TARGET = "13.0";
+				SWIFT_VERSION = "5.0";
+				SDKROOT = "macosx";
+			};
+		};
+		76F8DEC3DFE0BDB465198890 = {
+			isa = "XCConfigurationList";
+			buildConfigurations = (73EBF6644258C120893E685D, 0B0C687DF8B6B8DC790B519C);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+		244210E48437B6556980A702 = {
+			isa = "PBXProject";
+			attributes = {
+				LastUpgradeCheck = "1600";
+			};
+			buildConfigurationList = 76F8DEC3DFE0BDB465198890;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = "en";
+			hasScannedForEncodings = 0;
+			knownRegions = ("en", "zh-Hans", "Base");
+			mainGroup = 0D6E4079E36703EBD37C0072;
+			productRefGroup = 0A3E27B8CA818264D75C8D81;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (19F0412FED7FB65FECE00DBC, CEB54E7C88211EAE030AFD9C, 714D597302C7CB2D7F1D8A43);
+			packageReferences = (BC4A71180870F7945155FBB0);
+		};
+	};
+	rootObject = 244210E48437B6556980A702;
+}
