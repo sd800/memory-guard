@@ -37,9 +37,21 @@ Memory Guard works entirely on your Mac, including when you’re offline. Memory
 
 Memory Guard reads process identity and memory counters. Your conversations, source code and document contents stay outside its monitoring scope. Recent samples stay in RAM. If you export diagnostics, the app saves a local report to the location you choose. The app never uploads it.
 
-## Download
+## Download and install
 
-Get the [latest release](https://github.com/sd800/memory-guard/releases/latest) for Apple Silicon and macOS 13+. Unzip it, move **Memory Guard.app** to your Applications folder, then open it. The downloadable build is ad-hoc signed and not notarized; macOS may require approval in **System Settings → Privacy & Security**. Release assets include SHA-256 checksums.
+**26.11.1 (6) · Apple Silicon · macOS 13+**. The downloadable build is ad-hoc signed and not notarized, so the first launch may need your approval.
+
+1. [Download Memory Guard](https://github.com/sd800/memory-guard/releases/download/v26.11.1/MemoryGuard-26.11.1-6.zip) (`.zip`, 5.46 MB).
+2. In Finder, open **Downloads** and double-click the ZIP to extract **Memory Guard.app**. If your browser already extracted it, use that app.
+3. Drag **Memory Guard.app** into **Applications** in Finder’s sidebar.
+4. Open **Memory Guard** from **Applications**. If macOS says the developer cannot be verified or Apple cannot check the app, close the alert with **Done** or **OK**, keeping the app in place. If it opens normally, skip to step 7.
+5. Open **Apple menu → System Settings → Privacy & Security**. Scroll to **Security**, find the message about **Memory Guard**, and click **Open Anyway**.
+6. Complete any authentication macOS requests, such as Touch ID or your Mac login password, then click **Open** in the confirmation dialog.
+7. In Memory Guard, review the recommended limits in **Thresholds**. Allow notifications when prompted if you want protection alerts.
+
+If **Open Anyway** is missing, try opening the installed app again, then return to **Privacy & Security**. For updates, choose **Quit Completely** in Memory Guard before replacing the installed app.
+
+[SHA-256 checksums](https://github.com/sd800/memory-guard/releases/download/v26.11.1/SHA256SUMS.txt) · [Apple’s first-launch instructions](https://support.apple.com/en-us/102445)
 
 ## Build and run
 
