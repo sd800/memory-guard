@@ -1,16 +1,16 @@
-<p align="center"><img src="Resources/Assets.xcassets/MemoryGuardIcon.appiconset/icon_128x128.png" width="72" height="72" alt="Memory Guard 星空盾牌"></p>
+# <img src="web/assets/memory-guard-1024.png" width="128" align="right" alt=""> Memory Guard<br clear="right">
 
-# Memory Guard
+[English](README.md)
 
-[English](README.md) · macOS 13 及以上 · [MIT 许可证](LICENSE)
-
-Memory Guard 持续观察你选定的 Mac 应用，在内存异常增长时，可以暂停造成增长的那个进程。它最初是为长时间运行的 ChatGPT 和 Codex 任务设计的，也可以守护其他 Mac 应用，每个应用都能单独设置阈值。
+Memory Guard 守护你选定的 Mac 应用。当内存异常增长时，它可以暂停或结束造成增长的进程。
 
 ## 产品主张（Product statement）
 
-让编程助手继续跑任务，自己切到另一个窗口，是很常见的工作方式。如果某个辅助进程在这段时间里多占用了几个 GiB 的内存，你最先察觉的可能是光标开始卡顿，或者整个系统已经在大量使用交换空间。等到打开活动监视器，仅看当下的数字，很难区分哪个进程一直比较大，哪个才是刚刚失控的。
+开发 Memory Guard 的起因是一次 Codex 任务。运行过程中，Codex 的内存占用突然飙升到数十 GB，最终导致整台 Mac 崩溃。我们希望在系统还有余力响应时，就能发现并制止这样的异常增长。
 
-Memory Guard 会持续记录应用及其已验证的内置辅助进程的内存占用。总量达到你设置的阈值，且连续采样确认增长异常时，它可以暂停具体的异常进程，给你留下处理时间。暂停能阻止该进程继续申请内存，结束进程则能释放它已经占用的内存。
+Memory Guard 持续观察 Codex 及其通过验证的内置辅助进程，同时看它们合计占了多少内存，以及哪个进程还在增长。总量越过阈值且确认增长异常时，它可以暂停造成增长的进程。达到紧急阈值时，它可以结束该进程，释放已经占用的内存。
+
+你也可以把其他 Mac 应用加入保护名单。推荐阈值会根据本机的统一内存容量自动调整，每个应用都可以单独设置限值。
 
 ## Codex 的默认保护策略
 
@@ -31,6 +31,12 @@ Memory Guard 会持续记录应用及其已验证的内置辅助进程的内存�
 - **减少后台负担。** 采样和暂停记录保存在内存中，日常监控无需定时写入采样文件。默认每两秒采样一次，事件默认保留三天。
 - **关掉窗口，继续守护。** 关闭界面后，后台保护会继续运行。在设置里选择**完全退出**，或在应用菜单中选择**退出运行**，即可同时停止两个后台服务。登录时启动可按需开启。
 
+## 隐私
+
+Memory Guard 完全在你的 Mac 上运行，离线时也能正常守护。内存采样、增长判断和保护操作都在本机完成。应用无需账号，也不收集使用分析数据或追踪用户行为。
+
+守护程序读取的是进程身份和内存计数，不读取对话、源代码或文档内容。近期采样保存在内存中。只有当你主动导出诊断时，应用才会将报告保存到你选择的位置，不会上传报告。
+
 ## 构建与运行
 
 在安装了 Xcode 和 macOS SDK 的 Mac 上执行以下命令。项目使用 Swift、AppKit 和 SwiftUI，无第三方包依赖。
@@ -46,7 +52,7 @@ open "$HOME/Applications/Memory Guard.app"
 
 构建产物带有本机签名。更新已有安装时，请先完全退出，再替换应用。运行 `bash scripts/test.sh` 可验证检测和进程控制逻辑。
 
-[构建与安装](docs/BUILD.md) · [检测机制](docs/ARCHITECTURE.md) · [实机验证](docs/VALIDATION.md) · [更新日志](CHANGELOG.md)
+[官网](https://memory-guard.songming.org/zh/) · [构建与安装](docs/BUILD.md) · [检测机制](docs/ARCHITECTURE.md) · [实机验证](docs/VALIDATION.md) · [更新日志](CHANGELOG.md)
 
 ## 许可证
 
